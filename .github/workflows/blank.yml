@@ -20,12 +20,13 @@ jobs:
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
-
+    - name: Set env
+      run: echo ::set-env name=RELEASE_VERSION::${GITHUB_REF#refs/*/}
     # Runs a single command using the runners shell
     - name: Archive Release
       uses: thedoctor0/zip-release@master
       with:
-        filename: 'astralclient-${{github.ref}}.mcpack'
+        filename: 'astralclient-${{ env.RELEASE_VERSION }}.mcpack'
         exclusions: '*.git* README.md'
     - name: Upload Release
       id: upload-release-asset
@@ -34,6 +35,6 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: ./astralclient-${{github.ref}}.mcpack
-        asset_name: astralclient-${{github.ref}}.mcpack
+        asset_path: ./astralclient-${{ env.RELEASE_VERSION }}.mcpack
+        asset_name: astralclient-${{ env.RELEASE_VERSION }}.mcpack
         asset_content_type: application/x-gzip
