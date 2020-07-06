@@ -1,0 +1,32 @@
+{
+   "format_version" : 2,
+   "header" : {
+      "description" : "An all-in-one optimization §9client-resourcepack §ffor §dMCBE.",
+      "name" : "§dAstral §fVersion §95",
+      "uuid" : "4a219f48-0f25-423d-bea8-7025bbc0c7aa",
+      "version" : [ 5, 0, 0 ],
+      "min_engine_version" : [ 1, 14, 0 ]
+   },
+   "modules" : [
+      {
+         "description" : "Astral Client V5",
+         "type" : "resources",
+         "uuid" : "fed6c0c2-2ecd-4f5f-851f-a1e742305d05",
+         "version" : [ 5, 0, 0 ]
+      }
+   ],
+   
+   "subpacks": [
+      {
+         "folder_name": "astral",
+         "name": "Enable Astral GUI Textures (Dark Mode + Clear UI)",
+         "memory_tier": 1
+      },
+      {
+         "folder_name": "Nothing",
+         "name": "Default (Use this for better compatibility with your resource packs.)",
+         "memory_tier": 1
+      }
+    
+   ]
+}
